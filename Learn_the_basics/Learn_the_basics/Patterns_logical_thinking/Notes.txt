@@ -1,5 +1,0 @@
-**4 Rules**
-1. For outer loop, count the number of Rows.
-2. For inner loop, count the columns & connect them somehow with the Rows.
-3. Whatever you need to print do it in inner loop.
-4. Observe symmetry to the patterns [optional, since only few patterns follow].
