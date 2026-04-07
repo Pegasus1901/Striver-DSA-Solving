@@ -307,15 +307,12 @@ void patternS10(const int& x){
 
 
 int main(){
-    std::cout << "Testcases -"<<std::endl;
     int m,n;
     std::cin >> n;
     for (int i = 0; i < n; i++)
     {
-        std::cout<<"Value for input - "<<std::endl;
         std::cin>>m;
-        // pattern1(m);
-        pattern2(m);
+        patternS10(m);
     }
     
 }
