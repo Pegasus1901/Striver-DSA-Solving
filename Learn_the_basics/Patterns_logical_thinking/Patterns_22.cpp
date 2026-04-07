@@ -269,6 +269,7 @@ void pattern9(const int& x){
 * * 
 * 
 */
+//Thinking -> n=5 , then 2 formulas 1) 2n-1 {for rows} 2) 2n-i {for columns}
 
 void pattern10(const int& x){
     for (int i = 0; i < x; i++)
