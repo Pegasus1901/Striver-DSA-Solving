@@ -290,8 +290,7 @@ void pattern10(const int& x){
     }
 }
 void patternS10(const int& x){
-         for (int i = 1; i <= 2*x-1; i++)
-    {
+    for (int i = 1; i <= 2*x-1; i++){
         int stars = i;
         if(i>x) stars=2*x-i;
         for (int j = 1; j <= stars; j++)
@@ -299,12 +298,135 @@ void patternS10(const int& x){
             std::cout<< "*" ;
         }
             std::cout<< std::endl;
-        
     }
-    
 }
 
-
+/*
+    Problem 11 - 
+                1
+                0 1
+                1 0 1
+                0 1 0 1
+                1 0 1 0 1
+*/ 
+void pattern11(const int& x){
+    int start=0;
+    for(int i=1;i<x;i++){
+        if(i%2==0) start=0;
+        else start = 1;
+        for(int j=0;j<i;j++){
+            std::cout<< start;
+            start = 1 - start;
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+    Problem 12 - 
+                1             1
+                1 2         2 1 
+                1 2 3     3 2 1 
+                1 2 3 4 4 3 2 1
+*/ 
+void pattern12(const int& x){
+    for(int i=0;i<x;i++){
+        //number
+        for(int j=1;j<=i;j++){
+            std::cout<<j;
+        }
+         //spaces
+        for(int j=2;j<((2*x)-(2*i));j++){
+            std::cout<<" ";
+        }
+         //number
+        for(int j=i;j>0;j--){
+            std::cout<<j;
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+    Problem 13 - 
+                1 
+                2 3 
+                4 5 6 
+                7 8 9 10 
+                11 12 13 14 15
+*/
+void pattern13(const int& x){
+    int num=1;
+    for(int i=0;i<x;i++){
+        //number
+        for(int j=0;j<=i;j++){
+            std::cout<<num<<" ";
+            num++;
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 14 - 
+            A
+            AB
+            ABC
+            ABCD
+            ABCDE
+*/
+void pattern14(const int& x){
+    for(int i=0;i<x;i++){
+        //number
+        for(char j='A';j<='A'+ (x-i-1);j++){
+            std::cout<<j;
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 15 - 
+            ABCDE
+            ABCD
+            ABC
+            AB
+            A
+*/
+void pattern15(const int& x){
+    for(int i=x;i>0;i--){
+        //number
+        for(char j='A';j<='A'+ i;j++){
+            std::cout<<j;
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 16 -
+A
+BB
+CCC
+DDDD
+*/
+void pattern16(const int& x){
+    char ch='A';
+    for(int i=1;i<x;i++){
+        //number
+        for(int j=1;j<=i;j++){
+            std::cout<<ch;
+        }
+        ch++;
+        std::cout<<std::endl;
+    }
+}
+void pattern16(const int& x){
+    char ch='A';
+    for(int i=1;i<x;i++){
+        //number
+        for(int j=1;j<=i;j++){
+            std::cout<<ch;
+        }
+        ch++;
+        std::cout<<std::endl;
+    }
+}
 
 int main(){
     int m,n;
