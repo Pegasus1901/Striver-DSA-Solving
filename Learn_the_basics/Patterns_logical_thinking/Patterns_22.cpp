@@ -428,9 +428,9 @@ void pattern16(const int& x){
     }
 }
 void pattern17(const int& x){
-    for(int i=0;i<x;i++){
+for(int i=0;i<x;i++){
         //spaces
-        for(int j=0;j<=x-i;j++){
+        for(int j=0;j<x-i;j++){
             std::cout<<" ";
         }
         //alphabets
@@ -438,10 +438,12 @@ void pattern17(const int& x){
             std::cout<<ch;
         }
         //alphabets
-        //for(char ch='A';)
+        for(int j=i-1;j>0;j--){
+            std::cout<< char('A' + j - 1);
+        }
         
         //spaces
-        for(int j=0;j<=x-i;j++){
+        for(int j=0;j<x-i;j++){
             std::cout<<" ";
         }
         std::cout<<std::endl;
