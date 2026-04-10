@@ -427,6 +427,26 @@ void pattern16(const int& x){
         std::cout<<std::endl;
     }
 }
+void pattern17(const int& x){
+    for(int i=0;i<x;i++){
+        //spaces
+        for(int j=0;j<=x-i;j++){
+            std::cout<<" ";
+        }
+        //alphabets
+        for(char ch='A';ch<'A'+i;ch++){
+            std::cout<<ch;
+        }
+        //alphabets
+        //for(char ch='A';)
+        
+        //spaces
+        for(int j=0;j<=x-i;j++){
+            std::cout<<" ";
+        }
+        std::cout<<std::endl;
+    }
+}
 
 int main(){
     int m,n;
