@@ -462,6 +462,148 @@ void pattern18(const int& x){
         std::cout<<std::endl;
     }
 }
+/*
+Problem 19 -
+*********
+**** ****
+***   ***
+**     **
+*       *
+*       *
+**     **
+***   ***
+**** ****
+*********
+*/
+void pattern19(const int& x){
+    for(int i = 0; i <= x; i++){
+        // top left corner
+        for (int j = x-i; j > 0; j--)
+        {
+            std::cout << "*";
+        }
+         //top spaces
+        for (int k = 1; k < 2*i+1; k++)
+        {
+            std::cout<<" ";
+        }
+        // top right corner
+        for (int j = x-i; j > 0; j--)
+        {
+            std::cout << "*";
+        }
+        std::cout<<std::endl;
+    }
+    for(int i = 1; i <= x; i++){
+        for (int j = 1; j <= i; j++)
+        {
+            std::cout << "*";
+        }
+         //spaces
+        for(int j=1;j<=((2*x)-(2*i));j++){
+            std::cout<<" ";
+        }
+        //number
+        for (int j = 1; j <= i; j++)
+        {
+            std::cout << "*";
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 20 -
+*           *
+* *       * *
+* * *   * * *
+* * * * * * *
+* * *   * * *
+* *       * *
+*           *
+*/
+void pattern20(const int& x){
+    for(int i = 1; i <= x; i++){
+        for (int j = 1; j <= i; j++)
+        {
+            std::cout << "*";
+        }
+         //spaces
+        for(int j=1;j<=((2*x)-(2*i));j++){
+            std::cout<<" ";
+        }
+        //number
+        for (int j = 1; j <= i; j++)
+        {
+            std::cout << "*";
+        }
+        std::cout<<std::endl;
+    }
+    for(int i = 1; i < x; i++){
+        // top left corner
+        for (int j = x-i; j > 0; j--)
+        {
+            std::cout << "*";
+        }
+         //top spaces
+        for (int k = 1; k < 2*i+1; k++)
+        {
+            std::cout<<" ";
+        }
+        // top right corner
+        for (int j = x-i; j > 0; j--)
+        {
+            std::cout << "*";
+        }
+        std::cout<<std::endl;
+    }
+    
+}
+/*
+Problem 21 -
+****
+*  *
+*  *
+****
+*/
+void pattern21(const int& x){
+    for(int i=0;i<x;i++){
+        for(int j=0;j<x;j++){
+            if(i==0 || i==(x-1) || j==0 || j==(x-1)){
+                std::cout<<"*";
+            }else std::cout<<" ";
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 22 -
+4444444
+4333334
+4322234
+4321234
+4322234
+4333334
+4444444
+*/
+// Thinking ->
+//     consider n=4;
+//     the nth position will be 2n-1(7);
+//     substrat 4 from the given matrix;
+//     find the minimal distance from all sides for current position;
+//     top = i,left = j,right = (2n-1)-1-j, bottom = (2n-1)-1-i; 
+void pattern22(const int& x){
+    int num = 4;
+    for(int i=0;i<2*x-1;i++){
+        for(int j=0;j<2*x-1;j++){
+            int top = i;
+            int left = j;
+            int right = (2*x-1)-1-j;
+            int bottom = (2*x-1)-1-i;
+            std::cout<< (x-min(min(top, bottom), min(left,right)));
+        }
+        std::cout<<std::endl;
+    }    
+}
 
 int main(){
     int m,n;
