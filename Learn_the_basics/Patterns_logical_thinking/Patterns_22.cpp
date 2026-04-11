@@ -416,17 +416,13 @@ void pattern16(const int& x){
         std::cout<<std::endl;
     }
 }
-void pattern16(const int& x){
-    char ch='A';
-    for(int i=1;i<x;i++){
-        //number
-        for(int j=1;j<=i;j++){
-            std::cout<<ch;
-        }
-        ch++;
-        std::cout<<std::endl;
-    }
-}
+/*
+Problem 17 -
+   A
+  ABA
+ ABCBA
+ABCDCBA
+*/
 void pattern17(const int& x){
 for(int i=0;i<x;i++){
         //spaces
@@ -445,6 +441,23 @@ for(int i=0;i<x;i++){
         //spaces
         for(int j=0;j<x-i;j++){
             std::cout<<" ";
+        }
+        std::cout<<std::endl;
+    }
+}
+/*
+Problem 18 -
+E
+DE
+CDE
+BCDE
+ABCDE
+*/
+void pattern18(const int& x){
+    for(int i=0;i<x;i++){
+        //alphabets
+        for(char ch='E'-i;ch <= 'E';ch++){
+            std::cout<<ch;
         }
         std::cout<<std::endl;
     }
