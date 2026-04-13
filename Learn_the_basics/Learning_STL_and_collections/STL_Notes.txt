@@ -10,15 +10,17 @@ std::pair
   `printing pair -> p.first, p.second
   `pair<int,pair<int,int>> p = {1,{2,3}}
   `pair<int,int>arr[] = {{1,2},{2,3}}
+  `print -> arr[0].first;, arr[0].second;
 
 std::vector ( CONTAINER 1 )
   `vector<int> v;
   `v.push_back(2);
   `v.emplace_back(2);
   `std::vector<pair<int,int>> vec; -> vec.pushback({1,2}); vec.eplace_back(1,2);
-  `std::vector(5,100) means [100,100,100,100,100]
-  `std::vector(5); -> vector of size 5.
+  `vector<int> v2(5,100); means [100,100,100,100,100]
+  `std::vector vec(5); -> vector of size 5.
   `copying a vector -> std::vector<int> v1(vec);
+  `**IMP- in C++14 data type is required for vector definition an C++17 onwards not required -> vector<int> v2(5,100); & vector v2(5,100);
 
 **std::iterator
   `std::vector<int>::iterator itr = v.begin(); itr is pointer to the address of first element in vector
