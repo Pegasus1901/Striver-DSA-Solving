@@ -1,0 +1,213 @@
+****4 Pillars of STL
+// Algorithms
+// Containers
+// Functions
+// Iterators
+
+std::pair
+  `pair comes under Utility library
+  `std::pair<int,int); -> pair of two int
+  `printing pair -> p.first, p.second
+  `pair<int,pair<int,int>> p = {1,{2,3}}
+  `pair<int,int>arr[] = {{1,2},{2,3}}
+
+std::vector ( CONTAINER 1 )
+  `vector<int> v;
+  `v.push_back(2);
+  `v.emplace_back(2);
+  `std::vector<pair<int,int>> vec; -> vec.pushback({1,2}); vec.eplace_back(1,2);
+  `std::vector(5,100) means [100,100,100,100,100]
+  `std::vector(5); -> vector of size 5.
+  `copying a vector -> std::vector<int> v1(vec);
+
+**std::iterator
+  `std::vector<int>::iterator itr = v.begin(); itr is pointer to the address of first element in vector
+  `itr is address if printed directly, we need to derefrence it using '*'. printing value of itr -> cout<<*(itr);
+  `vector<int>::iterator it = v.end(); -> this it points to address after the last element of the vector
+  `vector<int>::iterator it = v.rend() -> this it points to address before the first element of the vector
+  `vector<int>::iterator it = v.rbegin() -> this points to the last element of the vector.
+  `v.back(); -> gives last element
+  `ex - for printing vector -> for(vector<int>::iterator it=v.begin();it!=v.end();it++){
+                                cout<<*(it);
+                                }
+  `ex - for printing vector -> for(auto it=v.begin();it!=v.end();it++){
+                                cout<<*(it);
+                                }
+  `ex - for printing vector -> for(auto it:v){
+                                cout<<*(it);
+                                }
+  `ERASE -> v.erase(position);
+            v.erase(start, end+1); -> start is the starting element to be deleted, end+1 means give +1 position till you want to delete from start
+
+  `INSERT -> v.insert(start position,value); -> this inserts the value to position does not replace it. ex - v.insert(v.begin(),10);
+             v.insert(start position,occurances,value) -> this inserts value*occurances times in the vector from the start position. ex - v.insert(v.begin()+1,2,10); inserts 10...2 times
+             consider vector new[10,19], ex -> v.insert(v.begin(), new.begin(),new.end()) -> this will insert whole new vector to v
+  `v.size();
+  `v.pop_back(); -> remove last element
+  `v.swap(v1); -> both vector elements will be swapped;
+  `v.clear(); remove entire vector
+  `v.empty(); returns true or false depending on vector not empty or empty respectively.
+  
+  `Vectors dont have operations for the first elements as copared to lists
+  
+std::list ( CONTAINER 2 )
+  `std::list<int> ls;
+  `ls.push_back(2);
+  `ls.emplace_back(3);
+  `ls.push_front(1); -> instead of INSERT function this is better.
+  'ls.emplace_front(0);
+  `Same functions as Vector end, back, begin , rbegin, rend;
+
+std::deque ( CONTAINER 3 )
+  `std::deque<int> dq;
+  `dq.push_back(2);
+  `dq.emplace_back(3);
+  `dq.push_front(1); -> instead of INSERT function this is better.
+  'dq.emplace_front(0);
+  `Same functions as Vector end, back, begin , rbegin, rend;
+
+std::stack ( CONTAINER 4 )
+  `stack is LIFO -> Last in First out
+  `std::stack<int> st; -> Imagine a container, putting layer by layer.
+  `there is no indexing in the stack;
+  `3 major functions -> push , pop, top
+  `st.push(1);
+  `st.push(2);
+  `st.push(3);
+  `st.emplace(4);
+  `st.top(); -> gives 4
+  `st.pop(); -> removes top element
+  `st.empty();
+  `std::stack<int> st1;
+  `st.swap(st1);
+  `**All stack operations are O(1)
+
+std::queue ( CONTAINER 5 )
+  `queue is FIFO -> First in First out
+  `std::queue<int> q;
+  `q.push(1);
+  `q.push(2);
+  `q.emplace(4);
+  `q.back() += 5; -> queue is {1,2,4} -> {1,2,9}
+  `q.front(); is 1
+  `q.pop(); removes 1(front element)
+  `**All queue operations are O(1)
+
+std::priority_queue ( CONTAINER 6 )
+  `std::priority_queue<int> pq;
+  `Also known as MAX HEAP
+  `always set the highest number inserted at start and lowest at the end.
+  `since elements stored will be from low to max 
+  `pq.push(5);
+  `pq.push(6);
+  `pq.emplace(10);
+  `pq.top(); -> prints 10
+  `pq.pop(); -> removes 10
+  `pq.top(); -> prints 6
+  `if the type is object how will pq work?
+  `the data is maintained as a tree structure, priority que is not linear
+  `**MINIMUM PRIORITY QUEUE
+        std::priority_queue<int,vector<int>,greater<int>>pq;
+        Also known as MIN HEAP
+        since elements stored will be from max to low
+   log(n) -> push, pop
+   O(1) -> top
+
+std::set ( CONTAINER 7 )
+  `Stores in sorted order and stores only unique
+  `std::set<int> st;
+  `Not a linear container this also uses tree structure
+  `st.inser(1);
+  `st.inser(2);
+  `st.emplace(7);
+  `st.inser(5); //{1,2,5,7}
+  `Insert is used so as to increase the effeciency
+  `all other functions same as vector
+  `auto it = st.find(3); -> returns an iterator pointing to the position.
+  `if element is not present it will return st.end(); which is iterator pointing to address after the set
+  `st.erase(5); -> it will search and delete the element directly
+  `int c = st.count(1); -> will always be 1 for easch element
+  `ERASE -> auto it1 = st.find(1);
+            auto it2 = st.find(4);
+            st.erase(it1,it2); -> takes constant time logN, also insert
+  `st.upper_bound();
+  `st.lower_bound();
+
+std::multiset ( CONTAINER 8 )
+  `This also stores sorted data but does not remove duplicates.
+  `std::multiset<int> ms;
+  `ms.insert(1);
+  `ms.insert(1);
+  `ms.insert(1);
+  `ms.erase(1); -> will delete all the 1 in the set
+  `int c = ms.count(1);
+  `ms.erase(ms.find(1); -> only one iterator address will get deleted
+  `ms.erase(ms.find(1), ms.find(1)+2); -> range deletion
+
+std::unordered_set ( CONTAINER 9 )
+  `This set has unique elements but not in order
+  `lower_bound and upper_bound do not work
+  `all operations are O(1) operations, very very very worst case O(N).
+  `all operations same as set
+
+std::map ( CONTAINER 10 )
+  `map<int,int> mp; -> stores key,value, but key is always unique.
+  `map<int,pair<int,int>> mp; -> key and value can be anything.
+  `map<pair<int,int>,int> mp;
+  `mp[1]; = 2; -> on key 1 store vlaue as 2.
+  `mp.emplace({3,1}); -> key- 3,val-1
+  `mp.insert({2,4}); -> keys are stored in sorted order ex- 1,2,3,....
+  `mp[{2,3}] = 10;
+  `{
+    {1,2}
+    {2,4}
+    {3,1}
+   }
+  `for(auto it:mp){
+      it.first, it.second
+   }
+  `mp[1]; -> will return value, mp[5]; if nothing present return 0
+  `auto it = mp.find(3); print -> *(it);
+  `lower_bound and upper_bound supported 
+  `erase,swap,size,empty,are same as above
+
+std::multimap ( CONTAINER 11 )
+  `same as map but allows multiple keys, in sorted order
+  `map[key] is not allowed
+
+std::unordered_map ( CONTAINER 12 )
+  `Time Complexity - O(1) rarerly, LogN always 
+  `same as unordered_set
+  `unique keys but unsorted
+
+<<<<-  COMPLETED  ->>>> CONTAINERS | ITERATORS | FUNCTIONS(Not required)
+
+ALGORITHMS
+
+sort(itr,itr+n); -> array
+sort(v.begin(),v.end()); c-> vector
+`to sort in descending way -> sort(a,a+n,greater<int>); -> greater is a Comparator in STL
+`example
+  pair<int,int> arr[] = {{1,2},{2,1},{4,1}};
+  `sort according to second element, if second element is same, then sort according to first element but in descending order
+  sort(a,a+n,comp); -> self written comparator is comp returns bool;
+  bool comp(pair<int,int> p1, pair<int,int> p2){
+      `assuming p1 is before p2
+      if(p1.second < p2.second) return true;
+      if(p1.second >p2.second) return false;
+      if(p1.first > p2.first) return true;
+      return false;
+  }
+int num = 7;(binary - 0 0 0 0 0.....0 0 0 1 1 1)
+int count = __builtin_popcount(); -> returns number of bits set for above is 3
+if number is long long then use -> __builtin_popcountll();
+
+string s ="123";
+`always sort the entity or variable then pass to next_permutation()
+do{
+print -> s } while (next_permutation(s.begin(),s.end()));
+`if the s i 312, only 321 will output, will only give ascending  combinations only
+int maxi = *max_element(a,a+n); -> returns iterator pointer '*' to get value
+
+  
+
