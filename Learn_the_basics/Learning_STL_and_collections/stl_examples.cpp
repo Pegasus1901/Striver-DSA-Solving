@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <stack>
+#include <queue>
 using namespace std;
 
 void pairOps(){
@@ -100,11 +102,61 @@ void listOps(){
     }
     cout<<"-------------"<<endl;
     cout<< bck << endl;
+    cout<<"-------------"<<endl;
+    for(list<int>::reverse_iterator it=ls.rbegin();it!=ls.rend();++it){
+        cout<<*it<<endl;
+    }
 }
+//Same for dequeue
+void stackOps(){
+    stack<int> st;
+    
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+    st.emplace(5);
+    
+    while(!st.empty()){
+        cout<<st.top()<<endl;
+        st.pop();
+    }
+    int tops = st.top();
+}
+void queueOps(){
+    queue<int> q;
+    
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.emplace(5);
+    cout<<"-------------"<<endl;
+    cout<<q.back()<<endl;
+    cout<<"-------------"<<endl;
+    cout<<q.front()<<endl;
+    cout<<"-------------"<<endl;
+    q.pop();
+    
+    cout<<q.front()<<endl;
+}
+void setOps(){
+    
+}
+//Multiset is same as set.
+//Unordered set is also same 
+
+void map(){
+    
+}
+//multimap is same as map
+//unordered map is same as map
 
 
 int main(){
     // pairOps();
     // vectorOps();
-    listOps();
+    // listOps();
+    // stackOps();
+    // queueOps();
 }
