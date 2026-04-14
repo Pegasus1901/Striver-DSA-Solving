@@ -37,6 +37,8 @@ void vectorOps(){
     
     vector<int> v;
     v.push_back(2);
+    v.push_back(5);
+    v.push_back(4);
     v.emplace_back(3);
     
     vector<pair<int,int>> vec;
@@ -49,18 +51,39 @@ void vectorOps(){
     
     iteratorOps(v,vec,v2,v1);
     
+    cout<<"------*------"<<endl;
+    v.erase(v.begin()+2);
+    for (auto it:v){
+        cout<< it<<endl;
+    }
+    cout<<"-----**------"<<endl;
+    v.erase(v.begin(),v.begin()+2);
+    for (auto it:v){
+        cout<< it<<endl;
+    }
+    cout<<"-----***-----"<<endl;
+    v.insert(v.begin(),10);
+    for (auto it:v){
+        cout<< it<<endl;
+    }
+    cout<<"----****-----"<<endl;
+    v.insert(v.begin()+2,3,51);
+    for (auto it:v){
+        cout<< it<<endl;
+    }
     cout<<"-------------"<<endl;
-    
+    int s=v.size();
+    cout<< "size= "<<s<<endl;
     cout<<"-------------"<<endl;
-    
+    cout << "pop() and clear() Ops..."<<endl;
+    v.pop_back();
+    v2.clear();
     cout<<"-------------"<<endl;
-    
-    cout<<"-------------"<<endl;
-    
+    if(v2.empty()) cout<<"Clear"<<endl;
 }
 
 
 int main(){
     // pairOps();
-    vectorOps();
+    // vectorOps();
 }
