@@ -1,6 +1,7 @@
 #include<iostream>
 #include <string>
 #include <vector>
+#include <list>
 using namespace std;
 
 void pairOps(){
@@ -81,9 +82,29 @@ void vectorOps(){
     cout<<"-------------"<<endl;
     if(v2.empty()) cout<<"Clear"<<endl;
 }
+void listOps(){
+    list<int> ls;
+    ls.push_back(1);
+    ls.push_back(2);
+    ls.push_back(3);
+    ls.push_back(4);
+    ls.emplace_back(5);
+    
+    ls.push_front(0);
+    ls.emplace_front(9);
+    
+    int bck = ls.back();
+    cout<<"-------------"<<endl;
+    for(int it:ls){
+        cout<<it<<endl;
+    }
+    cout<<"-------------"<<endl;
+    cout<< bck << endl;
+}
 
 
 int main(){
     // pairOps();
     // vectorOps();
+    listOps();
 }
