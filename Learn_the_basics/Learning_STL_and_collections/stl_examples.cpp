@@ -4,6 +4,8 @@
 #include <list>
 #include <stack>
 #include <queue>
+#include <set>
+#include <map>
 using namespace std;
 
 void pairOps(){
@@ -141,13 +143,52 @@ void queueOps(){
     cout<<q.front()<<endl;
 }
 void setOps(){
+    set<int> st;
     
+    st.insert(1);
+    st.insert(2);
+    st.insert(3);
+    st.insert(3);
+    st.insert(4);
+    st.emplace(5);
+    cout<<"-------------"<<endl;
+    for (set<int>::iterator it = st.begin(); it != st.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout<<endl;
+    cout<<"-------------"<<endl;
+    st.erase(2);
+    auto it1 = st.find(1);
+    auto it2 = st.find(4);
+    st.erase(it1,it2);
+    for (int x : st) {
+        cout << x << " ";
+    }
+    cout<<endl;
+    cout<<"-------------"<<endl;
+    auto it = st.find(4);
+    cout<<*it<<endl;
+    //All other functions same as Vector
+    auto itr1 = st.upper_bound(2);
+    auto itr2 = st.lower_bound(2);
+    
+
 }
 //Multiset is same as set.
 //Unordered set is also same 
 
-void map(){
+void mapOps(){
+    map<int,int> mp;
     
+    mp[1] = 2;
+    mp.emplace(3,4);
+    mp.insert({2,4});
+    // mp[{2,3}] = 10; valid case when map<pair<int,int>,int>
+    cout<<"-------------"<<endl;
+    for(auto it:mp){
+      cout<< it.first<<":"<<it.second<<endl;
+    }
+   cout<<"-------------"<<endl;
 }
 //multimap is same as map
 //unordered map is same as map
@@ -159,4 +200,6 @@ int main(){
     // listOps();
     // stackOps();
     // queueOps();
+    // setOps();
+    mapOps();
 }
