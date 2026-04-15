@@ -11,6 +11,8 @@ void bruteForceApproach(int n){
     cout<<count;
 }
 void optimalApproach(int n){
+    //log10 returns the power of 10 required to match the input number and then convert it to int to ignore decimal.
+    //ex- 123*log10 = 2.3 => +1 => 3.2 => 3
     int count = (int)(log10(n)+1);
     cout<<count;
 }
