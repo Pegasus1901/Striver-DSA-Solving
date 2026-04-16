@@ -10,6 +10,19 @@ int reverseNumber(int num){
     }
     return temp;
 }
+//LeetCode Solution
+int reverse(int x) {
+    long long temp=0;
+    while(x!=0){
+        int n = x % 10;
+        temp = temp * 10 + n;
+        if(temp>INT_MAX||temp<INT_MIN){
+            return 0;
+        }
+        x=x/10;
+    }
+    return temp;
+    }
 
 int main(){
     int input;
