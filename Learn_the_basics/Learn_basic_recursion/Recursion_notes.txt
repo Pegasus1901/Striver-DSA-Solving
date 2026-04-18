@@ -1,1 +1,15 @@
+Every recursive function should have
+1- Base Condition-> which will stop the recursion
+2- Recursive tree-> this tree is formed during execution and traverses back when exited...
 
+**Advantages
+Simplifies code
+Natural representation
+Reduces code complexity
+Useful in divide-and-conquer algorithms:
+
+**Disadvantages
+High memory usage
+Risk of stack overflow
+Slower execution
+Harder to debug
