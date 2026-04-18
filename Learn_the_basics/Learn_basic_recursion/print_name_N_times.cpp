@@ -2,11 +2,11 @@
 using namespace std;
 
 void printName(int n){
-    cout<<"Prathmesh ";
-    if(n==1){
+    if(n==0){
         return ;
     }
     n--;
+    cout<<"Prathmesh ";
     printName(n);
 }
 
