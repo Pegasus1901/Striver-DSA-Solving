@@ -1,75 +1,23 @@
+Case-I
 array of integers: [1, 2, 1, 3, 2]
 queries: [1, 3, 4, 2, 10]
 
-int main() {
+<code>
 
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    //precompute:
-    int hash[13] = {0};
-    for (int i = 0; i < n; i++) {
-        hash[arr[i]] += 1;
-    }
-
-    int q;
-    cin >> q;
-    while (q--) {
-        int number;
-        cin >> number;
-        // fetching:
-        cout << hash[number] << endl;
-    }
-    return 0;
-}
-
+Case-II
 Given the string: “abcdabefc"
 queries: [a, c, z]
-int main() {
 
-    string s;
-    cin >> s;
+<code>
 
-    //precompute:
-    int hash[26] = {0};
-    for (int i = 0; i < s.size(); i++) {
-        hash[s[i] - 'a']++;
-    }
-
-    int q;
-    cin >> q;
-    while (q--) {
-        char c;
-        cin >> c;
-        // fetch:
-        cout << hash[c - 'a'] << endl;
-    }
-    return 0;
-}
+Case-III
 Code if the string contains both uppercase and lowercase:
-int main() {
 
-    string s;
-    cin >> s;
+<code>
 
-    //precompute:
-    int hash[256] = {0};
-    for (int i = 0; i < s.size(); i++) {
-        hash[s[i]]++;
-    }
+How Map is created for hashing-
+1) Divison Method
+2) Folding Method
+3) Mid Square Method
 
-    int q;
-    cin >> q;
-    while (q--) {
-        char c;
-        cin >> c;
-        // fetch:
-        cout << hash[c] << endl;
-    }
-    return 0;
-}
-
+*Imp - Division Method
