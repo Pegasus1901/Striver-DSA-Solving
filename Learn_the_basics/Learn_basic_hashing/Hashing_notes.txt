@@ -43,4 +43,4 @@ Thus,
 Time complexity (Best and Medium) -> O(1)
                 (Worst) -> O(N)
 
-
+Map can have any data type but unordered map can have primitive data type only.
