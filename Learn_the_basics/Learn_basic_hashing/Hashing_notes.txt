@@ -21,3 +21,26 @@ How Map is created for hashing-
 3) Mid Square Method
 
 *Imp - Division Method
+Consider an array - 2,5,16,28,139,38,48,28,18
+Consider we cannot create hash array not more than 10
+in division method we do modulus by 10...
+So,
+0->
+1->
+2->2
+3->
+4->
+5->5
+6->16
+7->
+8->28, 8->28->38, 8->28->38->48, 8->28->28->38->48, 8->18->28->28->38->48(final)
+9->139
+
+**Collision
+if all the values in array end with 8 and we transfer them to hash value 8 then it will be considered collision. very rare case. 
+
+Thus,
+Time complexity (Best and Medium) -> O(1)
+                (Worst) -> O(N)
+
+
