@@ -1,1 +1,6 @@
-
+Selection Sort :-
+    Compare the first with all others and swap.
+    Replace the lowest to the start array value.
+    but loop will run from 0 till n-2 , because the last term(n-1) doesn't need sorting after sorting.
+    # first loop is for replacement of values,
+    # second will be for traversing all the elements.
