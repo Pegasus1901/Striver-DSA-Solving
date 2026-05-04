@@ -4,3 +4,7 @@ Selection Sort :-
     but loop will run from 0 till n-2 , because the last term(n-1) doesn't need sorting after sorting.
     # first loop is for replacement of values,
     # second will be for traversing all the elements.
+    Time Complexity - O(N^2) -> Best, Average and Worst Cases.
+Bubble Sort :-
+    Pushes the maximum to the left using adjacent swapping.
+    only compare ajacents and swap if small and repeat until done.
