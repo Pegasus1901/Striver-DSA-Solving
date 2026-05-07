@@ -8,3 +8,5 @@ Selection Sort :-
 Bubble Sort :-
     Pushes the maximum to the left using adjacent swapping.
     only compare ajacents and swap if small and repeat until done.
+    Time Complexity - O(N^2) ->  Best, Average and Worst Cases, Without optimization.
+    
