@@ -8,5 +8,9 @@ Selection Sort :-
 Bubble Sort :-
     Pushes the maximum to the left using adjacent swapping.
     only compare ajacents and swap if small and repeat until done.
-    Time Complexity - O(N^2) ->  Best, Average and Worst Cases, Without optimization.
-    
+    Time Complexity - O(N^2) -> Average and Worst Cases, Without optimization.
+    Best is O(N) when we add flag to optimize the searching with adding a flag.
+Insertion Sort :-
+    Increase the the size of array per iteration and the sort the current increased value.
+    Time Complexity - O(N^2) -> Average and Worst Cases, Without optimization.
+                      O(N)   -> Best Case
