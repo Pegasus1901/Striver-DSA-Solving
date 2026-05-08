@@ -1,0 +1,2 @@
+Merge Sort :-
+    Medium level sorting technique.
