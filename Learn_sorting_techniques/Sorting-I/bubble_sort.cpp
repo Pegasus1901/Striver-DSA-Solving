@@ -15,6 +15,20 @@ void bubble_sort(int arr[], int size){
         }
     }
 }
+void bubble_sort_modified(int arr[], int size){
+    for(int i=0;i<size-1;i++){
+        int flag=0;
+        for(int j=0;j<size-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr,j);
+                flag=1;
+            }
+        }
+        if(flag){
+            break;
+        }
+    }
+}
 
 int main()
 {
