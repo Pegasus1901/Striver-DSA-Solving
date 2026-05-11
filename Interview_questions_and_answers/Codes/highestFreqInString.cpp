@@ -21,11 +21,40 @@ void maxFreq(string str){
         }
     }
 }
+void maxFreqChar(string s){
+    char freq[52] = {0};
+    
+    //  STEP 1: Count frequency of each character
+    for(char c:s){
+        if(c>='A'||c<='Z'){
+            freq[c-'A']++;
+        }else if(c>'a'||c<'z'){
+            freq[c-'a'+26]++;
+        }
+    }
+    // STEP 2: Find maximum frequency
+    int maxFreq=0;
+    for(int i=0;i<52;i++){
+        if(freq[i]>maxFreq){
+            maxFreq=freq[i];
+        }
+    }
+    //  STEP 3: Print all characters with max frequency
+    for(int i=0;i<52;i++){
+        if(freq[i]==maxFreq){
+            if(i<26)
+                cout<< char(i+'A');
+            else
+                cout<< char(i-26+'a');
+        }
+    }
+}
 
 
 int main()
 {
-    string word = "CANDIDATEA";
+    string word = "CANDIDATE";
     maxFreq(word);
+    maxFreqChar(word);
     return 0;
 }
