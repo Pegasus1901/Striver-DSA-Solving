@@ -2,6 +2,8 @@
 #include <array>
 using namespace std;
 
+//These codes are for Ascending Sorting, By changing only the comparator I can achieve descending
+
 void selectionSortAscending(array<int,5>& arr){
     for(int i=0;i<arr.size()-1;i++){
         for(int j=i+1;j<arr.size();j++){
